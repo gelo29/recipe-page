@@ -41,8 +41,14 @@ html {
 body {
   min-height: 100vh;
   line-height: 1.5;
-  font-size: 16px;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
   font-family: var(--font-outfit);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-stone-600);
+  background-color: var(--color-stone-150);
 }
 
 img,
@@ -69,10 +75,111 @@ h6 {
   font-family: var(--font-young);
 }
 /* ================================ Main Layout ===================================== */
+main {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: var(--color-white);
+  padding: 40px;
+}
+section {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* outline: 1px solid red; */
+}
+
+header img {
+  border-radius: 20px;
+  object-fit: cover;
+}
+h1 {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  color: var(--color-stone-900);
+}
+table {
+  border-collapse: collapse;
+  min-height: 200px;
+}
+tr {
+  border-bottom: 1px solid var(--color-stone-150);
+}
+td {
+  text-align: left;
+  padding-left: 30px;
+}
+.nutrition-value {
+  text-align: left;
+}
+ul,
+ol {
+  padding: 0 0 0 10px;
+}
+ul li,
+ol li {
+  margin: 10px;
+  padding-left: 15px;
+}
+ul li::marker,
+ol li::marker {
+  color: var(--color-brown);
+}
+
+h2,
+.nutrition-value {
+  color: var(--color-brown);
+  font-weight: 600;
+}
+
+span {
+  color: var(--color-stone-600);
+  font-weight: 700;
+}
+.prep-time {
+  background-color: var(--color-rose-50);
+  padding: 20px;
+  border-radius: 20px;
+}
+.prep-time__title {
+  color: var(--color-rose-800);
+  font-weight: 700;
+}
+article {
+  padding: 1.8rem 0 1.8rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+article > section:nth-of-type(3),
+article > section:nth-of-type(4) {
+  border-bottom: 1px solid var(--color-stone-150);
+  padding-bottom: 1rem;
+}
 .attribution {
   font-size: 0.6875rem;
   text-align: center;
 }
 .attribution a {
   color: var(--color-blue);
+}
+
+@media (max-width: 40rem) {
+  main {
+    padding: 0;
+  }
+  article {
+    margin: 0 2rem 0 2rem;
+  }
+  header img {
+    border-radius: 0;
+  }
 }
